@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-// Define Ts interface for the invoice object
-interface invoiceProps {
+// TypeScript interface for invoice data
+interface InvoiceProps {
   id: string;
   date: string;
   status: string;
@@ -9,16 +9,18 @@ interface invoiceProps {
   plan: string;
   downloadUrl: string;
 }
+
 const Invoice = () => {
-  const [invoices, setInvoices] = useState<invoiceProps[]>([]); //State to hold fetched invoices
+  const [invoices, setInvoices] = useState<InvoiceProps[]>([]); // Invoice data
+  const [loading, setLoading] = useState(true); 
 
-  // Loading state to show feadack while fetching data
-  const [loading, setLoading] = useState(true);
-
-  // Fetch invoice data from API when the components mounts
+  // Fetch data when component mounts
   useEffect(() => {
-    fetch("/api/invoice")
-      .then((req) => req.json())
+    fetch("/api/invoices")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch");
+        return res.json();
+      })
       .then((data) => {
         setInvoices(data);
         setLoading(false);
@@ -30,9 +32,9 @@ const Invoice = () => {
   }, []);
 
   return (
-    <div className="flex h-screen items-center justify-center bg-[#ffffff]">
+    <div className="flex h-screen items-center justify-center bg-white">
       <div className="w-full max-w-4xl text-center p-4">
-        <h1 className="text-2xl text-black font-bold text-left">
+        <h1 className="text-2xl font-bold text-left text-black">
           Payment History
         </h1>
         <p className="text-sm text-gray-500 mt-2 text-left">
@@ -42,16 +44,15 @@ const Invoice = () => {
         </p>
 
         {loading ? (
-          <p>Loading invoices...</p>
+          <p className="mt-4">Loading invoices...</p>
         ) : invoices.length === 0 ? (
-          <p>No invoices found</p>
+          <p className="mt-4">No invoices found</p>
         ) : (
-          // Invoice data
-          <div className="overflow-x-aut mt-6">
-            <table className="w-full md:w-[60rem] text-sm text-left border-slate-950 border mx-auto">
-              <thead className="text-black  font-extralight px-4">
-                <tr className="text-sm">
-                  <th className="px-4 py-2">Invoice</th>
+          <div className="overflow-x-auto mt-6">
+            <table className="w-full text-sm text-left border border-gray-300 mx-auto">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="px-4 py-2">Date</th>
                   <th className="px-4 py-2">Status</th>
                   <th className="px-4 py-2">Amount</th>
                   <th className="px-4 py-2">Plan</th>
@@ -59,19 +60,23 @@ const Invoice = () => {
               </thead>
               <tbody>
                 {invoices.map((invoice) => (
-                  <tr key={invoice.id}>
-                    <td>{new Date(invoice.date).toLocaleDateString()}</td>
+                  <tr key={invoice.id} className="border-t">
+                    <td className="px-4 py-2">
+                      {new Date(invoice.date).toLocaleDateString()}
+                    </td>
                     <td
-                      className={`px-6 py-4 font-medium ${
-                        invoice.status === "paid"
+                      className={`px-4 py-2 font-medium ${
+                        invoice.status.toLowerCase() === "paid"
                           ? "text-green-600"
-                          : "text-gray-500"
+                          : "text-yellow-500"
                       }`}
                     >
                       {invoice.status}
                     </td>
-                    <td>${invoice.amount.toFixed(2)}</td>
-                    <td>{invoice.plan}</td>
+                    <td className="px-4 py-2">
+                      ${invoice.amount.toFixed(2)}
+                    </td>
+                    <td className="px-4 py-2">{invoice.plan}</td>
                   </tr>
                 ))}
               </tbody>
