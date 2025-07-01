@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 // TypeScript interface for invoice data
 interface InvoiceProps {
   id: string;
-  date: string;
+  created_at: string;
   status: string;
   amount: number;
   plan: string;
@@ -12,11 +12,11 @@ interface InvoiceProps {
 
 const Invoice = () => {
   const [invoices, setInvoices] = useState<InvoiceProps[]>([]); // Invoice data
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
 
   // Fetch data when component mounts
   useEffect(() => {
-    fetch("/api/invoices")
+    fetch("/api/invoice")
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch");
         return res.json();
@@ -48,9 +48,9 @@ const Invoice = () => {
         ) : invoices.length === 0 ? (
           <p className="mt-4">No invoices found</p>
         ) : (
-          <div className="overflow-x-auto mt-6">
+          <div className="mt-6 rounded">
             <table className="w-full text-sm text-left border border-gray-300 mx-auto">
-              <thead className="bg-gray-100">
+              <thead className="">
                 <tr>
                   <th className="px-4 py-2">Date</th>
                   <th className="px-4 py-2">Status</th>
@@ -60,22 +60,23 @@ const Invoice = () => {
               </thead>
               <tbody>
                 {invoices.map((invoice) => (
-                  <tr key={invoice.id} className="border-t">
+                  <tr
+                    key={invoice.id}
+                    className="border border-gray-300 mx-auto"
+                  >
                     <td className="px-4 py-2">
-                      {new Date(invoice.date).toLocaleDateString()}
+                      {new Date(invoice.created_at).toLocaleDateString()}
                     </td>
                     <td
-                      className={`px-4 py-2 font-medium ${
+                      className={`px-4 py-6 font-medium  ${
                         invoice.status.toLowerCase() === "paid"
-                          ? "text-green-600"
-                          : "text-yellow-500"
+                          ? "text-green-600 bg-green-200 max-w- rounded"
+                          : "text-gray-500 bg-gray-200  rounded-sm"
                       }`}
                     >
                       {invoice.status}
                     </td>
-                    <td className="px-4 py-2">
-                      ${invoice.amount.toFixed(2)}
-                    </td>
+                    <td className="px-4 py-2">${invoice.amount.toFixed(2)}</td>
                     <td className="px-4 py-2">{invoice.plan}</td>
                   </tr>
                 ))}
