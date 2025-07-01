@@ -1,5 +1,6 @@
 [
   {
+    "id": "inv_1",
     "amount": 12,
     "plan": "professional",
     "status": "paid",
@@ -7,6 +8,7 @@
     "created_at": "2024-03-01"
   },
   {
+    "id": "inv_2",
     "amount": 6,
     "plan": "basic",
     "status": "paid",
@@ -14,6 +16,7 @@
     "created_at": "2024-02-01"
   },
   {
+    "id": "inv_3",
     "amount": 6,
     "plan": "basic",
     "status": "paid",
@@ -21,6 +24,7 @@
     "created_at": "2024-01-01"
   },
   {
+    "id": "inv_4",
     "amount": 0,
     "plan": "starter",
     "status": "paid",
