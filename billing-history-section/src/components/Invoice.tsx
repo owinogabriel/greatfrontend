@@ -67,17 +67,30 @@ const Invoice = () => {
                     <td className="px-4 py-2">
                       {new Date(invoice.created_at).toLocaleDateString()}
                     </td>
-                    <td
-                      className={`px-4 py-6 font-medium  ${
-                        invoice.status.toLowerCase() === "paid"
-                          ? "text-green-600 bg-green-200 max-w- rounded"
-                          : "text-gray-500 bg-gray-200  rounded-sm"
-                      }`}
-                    >
-                      {invoice.status}
+                    <td className="px-4 py-2">
+                      <span
+                        className={`inline-block px-2 py-1 text-sm font-medium rounded 
+        ${
+          invoice.status.toLowerCase() === "paid"
+            ? "bg-green-200 text-green-700"
+            : "bg-gray-200 text-gray-600"
+        }`}
+                      >
+                        {invoice.status}
+                      </span>
                     </td>
                     <td className="px-4 py-2">${invoice.amount.toFixed(2)}</td>
                     <td className="px-4 py-2">{invoice.plan}</td>
+                    <td className="px-4 py-2">
+                      <a
+                        href={invoice.downloadUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 hover:cursor-pointer bg-blue-200 rounded py-1 px-2"
+                      >
+                        Download
+                      </a>
+                    </td>
                   </tr>
                 ))}
               </tbody>
