@@ -7,7 +7,7 @@ interface InvoiceProps {
   status: string;
   amount: number;
   plan: string;
-  downloadUrl: string;
+  invoice_url: string;
 }
 
 const Invoice = () => {
@@ -83,7 +83,7 @@ const Invoice = () => {
                     <td className="px-4 py-2">{invoice.plan}</td>
                     <td className="px-4 py-2">
                       <a
-                        href={invoice.downloadUrl}
+                        href={invoice.invoice_url}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-500 hover:cursor-pointer bg-blue-200 rounded py-1 px-2"
