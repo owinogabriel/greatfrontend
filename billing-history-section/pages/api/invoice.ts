@@ -1,4 +1,3 @@
-// ✅ Required modules
 import fs from 'fs';
 import path from 'path';
 import { NextApiRequest, NextApiResponse } from 'next';
@@ -16,7 +15,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   // allow GET requests
   if (req.method !== 'GET') {
-    return res.status(405).json({ message: 'Method Not Allowed' });
+    return res.status(404).json({ message: 'Method Not Allowed' });
   }
 
   try {
