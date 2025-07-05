@@ -48,45 +48,45 @@ const Invoice = () => {
         ) : invoices.length === 0 ? (
           <p className="mt-4">No invoices found</p>
         ) : (
-          <div className="mt-6 rounded">
-            <table className="w-full text-sm text-left border border-gray-300 mx-auto">
+          <div className="mt-6 rounded overflow-x-auto">
+            <table className="w-full text-sm text-left border border-gray-300 min-w-max">
               <thead className="">
                 <tr>
-                  <th className="px-4 py-2">Date</th>
-                  <th className="px-4 py-2">Status</th>
-                  <th className="px-4 py-2">Amount</th>
-                  <th className="px-4 py-2">Plan</th>
+                  <th className="px-4 py-2 whitespace-nowrap">Date</th>
+                  <th className="px-4 py-2 whitespace-nowrap">Status</th>
+                  <th className="px-4 py-2 whitespace-nowrap">Amount</th>
+                  <th className="px-4 py-2 whitespace-nowrap">Plan</th>
+                  <th className="px-4 py-2 whitespace-nowrap">Action</th>
                 </tr>
               </thead>
               <tbody>
                 {invoices.map((invoice) => (
                   <tr
                     key={invoice.id}
-                    className="border border-gray-300 mx-auto"
+                    className="border-b border-gray-300"
                   >
-                    <td className="px-4 py-2">
+                    <td className="px-4 py-2 whitespace-nowrap">
                       {new Date(invoice.created_at).toLocaleDateString()}
                     </td>
                     <td className="px-4 py-2">
                       <span
-                        className={`inline-block px-2 py-1 text-sm font-medium rounded 
-        ${
-          invoice.status.toLowerCase() === "paid"
-            ? "bg-green-200 text-green-700"
-            : "bg-gray-200 text-gray-600"
-        }`}
+                        className={`inline-block px-2 py-1 text-xs font-medium rounded whitespace-nowrap
+                ${invoice.status.toLowerCase() === "paid"
+                            ? "bg-green-200 text-green-700"
+                            : "bg-gray-200 text-gray-600"
+                          }`}
                       >
                         {invoice.status}
                       </span>
                     </td>
-                    <td className="px-4 py-2">${invoice.amount.toFixed(2)}</td>
-                    <td className="px-4 py-2">{invoice.plan}</td>
+                    <td className="px-4 py-2 whitespace-nowrap">${invoice.amount.toFixed(2)}</td>
+                    <td className="px-4 py-2 whitespace-nowrap">{invoice.plan}</td>
                     <td className="px-4 py-2">
                       <a
                         href={invoice.invoice_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-500 hover:cursor-pointer bg-blue-200 rounded py-1 px-2"
+                        className="text-blue-500 hover:cursor-pointer bg-blue-200 rounded py-1 px-2 text-xs whitespace-nowrap inline-block"
                       >
                         Download
                       </a>
@@ -96,10 +96,10 @@ const Invoice = () => {
               </tbody>
             </table>
           </div>
-        )}
-      </div>
+            )}
+          </div>
     </div>
-  );
+      );
 };
 
-export default Invoice;
+      export default Invoice;
