@@ -24,7 +24,7 @@ Most projects here are built using:
 Each challenge has its own folder:
 
 
-Each project contains a `README.md`, screenshots, and setup instructions where necessary.
+Each project contains a `README.md`, and setup instructions where necessary.
 
 ## 🌐 Live Demos
 
@@ -38,7 +38,7 @@ git clone https://github.com/<your-username>/greatfrontend-projects.git
 cd greatfrontend-projects
 
 # Navigate to a specific project
-cd 01-buttons-ui
+cd <project-name>
 
 # Install dependencies
 npm install
