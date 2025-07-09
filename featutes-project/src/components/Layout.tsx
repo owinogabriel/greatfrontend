@@ -1,7 +1,6 @@
-import {  useEffect} from "react";
+import { useEffect } from "react";
 import { Navbar } from "./elements/Navbar";
-import  Footer  from "./elements/Footer";
-
+import Footer from "./elements/Footer";
 
 // Defining Layout
 interface LayoutProps {
@@ -12,8 +11,8 @@ interface LayoutProps {
 export const Layout = ({ title, children }: LayoutProps) => {
   //useEffect rendered for web title display when onmount
   useEffect(() => {
-    document.title = title
-  }, [title])
+    document.title = title;
+  }, [title]);
   return (
     <>
       <Navbar />
@@ -22,5 +21,5 @@ export const Layout = ({ title, children }: LayoutProps) => {
       </main>
       <Footer />
     </>
-  )
-}
+  );
+};

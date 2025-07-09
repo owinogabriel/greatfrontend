@@ -22,7 +22,7 @@ export const Navbar = () => {
                 <img src={logo} alt="abstract" className="w-full" />
               </a>
             </div>
-            
+
             <div
               className="flex flex-col lg:flex-row w-full lg:justify-between lg:items-center
                          absolute top-full left-0 lg:static lg:top-0 bg-body lg:bg-transparent
