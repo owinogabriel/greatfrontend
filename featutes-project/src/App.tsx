@@ -1,10 +1,12 @@
+import { Layout } from "./components/Layout"
+
 function App() {
 
 
   return (
-    <>
-      <div className='text-2xl text-amber-700'>Hello World</div>
-    </>
+    <Layout title="Feature | Abstractly">
+<></>
+    </Layout>
   )
 }
 
