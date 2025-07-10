@@ -16,7 +16,5 @@ The requirements that each component has to fulfill remains the same – you sho
 >- Contact Section
 >- Footer Section (Simple)
 
-- [ ] Todo Daily Sprints 9 July:
-    - [ ] Install all packages dependancies needed for the project
-    - [ ] Add all assests expected to be used
+- [ ] Todo Daily Sprints 10 July:
     - [ ] Add the navbar and ensure that its responsive in all devices
