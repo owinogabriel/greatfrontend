@@ -1,3 +1,4 @@
+import { Button } from "../shared/Button";
 import { Container } from "../shared/Container";
 import { NavItem } from "../shared/NavItem";
 import logo from "/assets/abstractly.png";
@@ -37,6 +38,14 @@ export const Navbar = () => {
                   <NavItem href={item.href} text={item.text} key={index} />
                 ))}
               </ul>
+              <div className="flex flex-row gap-6 justify-end">
+                <Button className="w-36 transform transition-transform text-gray-700 bg-white">
+                  Learn more
+                </Button>
+                <Button className="w-32 transform transition-transform text-cyan-50 bg-blue-700">
+                  See Pricing
+                </Button>
+              </div>
             </div>
           </nav>
         </Container>
