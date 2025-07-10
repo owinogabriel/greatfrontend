@@ -8,7 +8,7 @@ export const NavItem = ({ href, text }: NavItemProps) => {
     <li>
       <a
         href={href}
-        className="duration-300 font-semibold text-gray-500 ease-linear hover:text-primary py-3"
+        className="duration-300 font-semibold text-sm text-gray-300 ease-linear cursor-pointer hover:text-amber-100 py-3"
       >
         {text}
       </a>
