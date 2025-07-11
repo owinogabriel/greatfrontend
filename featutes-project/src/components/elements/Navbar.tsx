@@ -17,7 +17,7 @@ export const Navbar = () => {
   return (
     <header className="absolute inset-x-0 z-50">
       {/* Full-width background wrapper */}
-      <div className="w-full bg-gray-400">
+      <div className="w-full bg-[#F8FAFB]">
         <Container className="">
           <nav className="w-full flex justify-between items-center py-4 relative">
             {/* Logo - Left side */}
