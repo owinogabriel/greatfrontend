@@ -17,6 +17,5 @@ The requirements that each component has to fulfill remains the same – you sho
 >- Footer Section (Simple)
 
 - [ ] Todo  Sprint as of 10 July to end on 13:
-    - [ ] Add the navbar and ensure that its responsive in all devices
     - [ ] update the footer
     - [ ] ensure everything is responsive
