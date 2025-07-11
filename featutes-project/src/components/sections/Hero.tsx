@@ -25,14 +25,14 @@ const Hero = () => {
             <ul className="text-[#b0adad] space-y-6 text-sm font-light max-w-[28ch] md:text-2xl">
               {/* mapping through the defined featureDetails Array */}
               {featureDetails.map((feature, index) => (
-                <li key={index} className="flex items-center">
+                <li key={index} className="flex items-center md:mt-6">
                   <div className="w-6 h-6 bg-[#EEF2FE] rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                     <FontAwesomeIcon
                       icon={faCheck}
                       className="text-[#8185F3] text-xm"
                     />
                   </div>
-                  <span className="md:mt-5">{feature.text}</span>
+                  <span className="">{feature.text}</span>
                 </li>
               ))}
             </ul>
