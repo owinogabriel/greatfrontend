@@ -11,15 +11,16 @@ export const navItems = [
   { href: "#aboutUs", text: "About Us" },
   { href: "#contact", text: "Contact" },
 ];
-
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="absolute inset-x-0 z-50">
+      {/* Full-width background wrapper */}
       <div className="w-full bg-gray-400">
         <Container className="">
           <nav className="w-full flex justify-between items-center py-4 relative">
+            {/* Logo - Left side */}
             <div className="flex-shrink-0">
               <a href="/" className="flex items-center">
                 <img
@@ -30,7 +31,7 @@ export const Navbar = () => {
               </a>
             </div>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation - Center */}
             <div className="hidden lg:flex items-center justify-center flex-1">
               <ul className="flex gap-x-8 text-lg text-heading-2 hover:text-amber-300">
                 {navItems.map((item, index) => (
@@ -39,17 +40,17 @@ export const Navbar = () => {
               </ul>
             </div>
 
-            {/* Desktop Buttons */}
+            {/* Desktop Buttons - Right side */}
             <div className="hidden lg:flex gap-4">
-              <Button className="px-6 py-2 transform transition-transform text-gray-700 bg-white">
+              <Button className="px-6 py-2 transform transition-transform  hover:bg-amber-50 text-gray-700 bg-white">
                 Learn more
               </Button>
-              <Button className="px-6 py-2 transform transition-transform text-cyan-50 bg-blue-700">
+              <Button className="px-6 py-2 transform transition-transform hover:bg-blue-200 text-cyan-50 bg-blue-700">
                 See Pricing
               </Button>
             </div>
 
-            {/* Mobile Menu Button Right side */}
+            {/* Mobile Menu Button - Right side */}
             <div className="lg:hidden">
               <button
                 onClick={() => setMenuOpen((prev) => !prev)}
@@ -76,35 +77,35 @@ export const Navbar = () => {
               </button>
             </div>
           </nav>
-
-          {/* Mobile Menu Dropdown */}
-          {menuOpen && (
-            <div className="lg:hidden relative bg-gray-100 bg-opacity-95 rounded-md mx-4 mb-4 p-4 shadow-lg">
-              <ul className="text-gray-900 space-y-3 text-lg font-medium mb-4">
-                {navItems.map((item, index) => (
-                  <li key={index}>
-                    <a
-                      href={item.href}
-                      className="block py-1 px-4 rounded font-medium text-gray-400 hover:text-amber-100 transition-colors"
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      {item.text}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              <div className="flex flex-col gap-3">
-                <Button className="w-full py-2 transform transition-transform text-gray-700 bg-white">
-                  Learn more
-                </Button>
-                <Button className="w-full py-2 transform transition-transform text-cyan-50 bg-blue-700">
-                  See Pricing
-                </Button>
-              </div>
-            </div>
-          )}
         </Container>
       </div>
+
+      {/* Mobile Menu Dropdown - Outside the gray background */}
+      {menuOpen && (
+        <div className="lg:hidden bg-amber-100 mt-3 bg-opacity-95 rounded-md mx-4 mb-4 p-4 shadow-lg">
+          <ul className="text-gray-900 space-y-3 text-lg font-medium mb-4">
+            {navItems.map((item, index) => (
+              <li key={index}>
+                <a
+                  href={item.href}
+                  className="block py-1 px-4 rounded font-medium text-gray-400 hover:text-amber-100 transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className="flex flex-col gap-3">
+            <Button className="w-full py-2 transform transition-transform hover:bg-amber-50 text-gray-700 bg-white">
+              Learn more
+            </Button>
+            <Button className="w-full py-2 transform transition-transform hover:bg-blue-200 text-cyan-50 bg-blue-700">
+              See Pricing
+            </Button>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
