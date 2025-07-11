@@ -12,9 +12,9 @@ export const Footer = () => {
               <NavItem key={key} href={item.href} text={item.text} />
             ))}
           </ul>
-            <p className="text-sm font-medium md:text-lg md:mt-6">
-              © 2025 Abstractly,Inc. All rights reserved.
-            </p>
+          <p className="text-sm font-semibold md:text-lg md:mt-6">
+            © 2025 Abstractly, Inc. All rights reserved.
+          </p>
         </div>
       </Container>
     </footer>
