@@ -14,87 +14,95 @@ export const navItems = [
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="absolute inset-x-0 z-50">
-      {/* Full-width background wrapper */}
       <div className="w-full bg-gray-400">
         <Container className="">
-          <nav className="w-full flex justify-center gap-6 md:gap-x-7 relative">
-            <div className="inline-flex relative">
-              <a href="/" className="relative flex items-center gap-3">
-                <img src={logo} alt="abstract" className="w-32 sm:w-full" />
+          <nav className="w-full flex justify-between items-center py-4 relative">
+            <div className="flex-shrink-0">
+              <a href="/" className="flex items-center">
+                <img
+                  src={logo}
+                  alt="abstract"
+                  className="w-24 sm:w-32 md:w-36"
+                />
               </a>
             </div>
-            <div
-              className="flex flex-col lg:flex-row w-full lg:justify-between lg:items-center
-                         absolute top-full left-0 lg:static lg:top-0 bg-body lg:bg-transparent
-                         border-x border-x-box-border lg:border-x-0 lg:h-auto h-0 overflow-hidden"
-            >
-              <ul
-                className=" border-t border-box-border lg:border-t-0 px-6 lg:px-0
-                           pt-6 lg:pt-0 flex flex-col lg:flex-row gap-y-6 gap-x-7
-                           text-lg text-heading-2 w-full lg:justify-center lg:items-center hover:text-amber-300"
-              >
+
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center justify-center flex-1">
+              <ul className="flex gap-x-8 text-lg text-heading-2 hover:text-amber-300">
                 {navItems.map((item, index) => (
                   <NavItem href={item.href} text={item.text} key={index} />
                 ))}
               </ul>
-              <div className="flex flex-row gap-6 justify-end">
-                <Button className="w-36 transform transition-transform text-gray-700 bg-white">
-                  Learn more
-                </Button>
-                <Button className="w-32 transform transition-transform text-cyan-50 bg-blue-700">
-                  See Pricing
-                </Button>
-              </div>
             </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setMenuOpen((prev) => !prev)}
-              className="text-gray-900 focus:outline-none"
-              aria-label="Toggle mobile menu"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            {/* Desktop Buttons */}
+            <div className="hidden lg:flex gap-4">
+              <Button className="px-6 py-2 transform transition-transform text-gray-700 bg-white">
+                Learn more
+              </Button>
+              <Button className="px-6 py-2 transform transition-transform text-cyan-50 bg-blue-700">
+                See Pricing
+              </Button>
+            </div>
+
+            {/* Mobile Menu Button Right side */}
+            <div className="lg:hidden">
+              <button
+                onClick={() => setMenuOpen((prev) => !prev)}
+                className="text-gray-900 focus:outline-none p-2"
+                aria-label="Toggle mobile menu"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d={
-                    menuOpen
-                      ? "M6 18L18 6M6 6l12 12"
-                      : "M4 6h16M4 12h16M4 18h16"
-                  }
-                />
-              </svg>
-            </button>
-          </div>
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d={
+                      menuOpen
+                        ? "M6 18L18 6M6 6l12 12"
+                        : "M4 6h16M4 12h16M4 18h16"
+                    }
+                  />
+                </svg>
+              </button>
+            </div>
+          </nav>
+
           {/* Mobile Menu Dropdown */}
           {menuOpen && (
-            <div className="fixed justify-center inset-x-0 top-16 bg-gray-100 rounded-md bg-opacity-95 px-4 pt-4 pb-6 z-50 md:hidden">
-              <ul className="text-gray-900 space-y-3 text-lg font-medium">
+            <div className="lg:hidden relative bg-gray-100 bg-opacity-95 rounded-md mx-4 mb-4 p-4 shadow-lg">
+              <ul className="text-gray-900 space-y-3 text-lg font-medium mb-4">
                 {navItems.map((item, index) => (
-                  <NavItem href={item.href} text={item.text} key={index} />
+                  <li key={index}>
+                    <a
+                      href={item.href}
+                      className="block py-1 px-4 rounded font-medium text-gray-400 hover:text-amber-100 transition-colors"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {item.text}
+                    </a>
+                  </li>
                 ))}
               </ul>
-                <div className="flex flex-col gap-6 justify-end">
-                <Button className="w-36 transform transition-transform text-gray-700 bg-white">
+              <div className="flex flex-col gap-3">
+                <Button className="w-full py-2 transform transition-transform text-gray-700 bg-white">
                   Learn more
                 </Button>
-                <Button className="w-32 transform transition-transform text-cyan-50 bg-blue-700">
+                <Button className="w-full py-2 transform transition-transform text-cyan-50 bg-blue-700">
                   See Pricing
                 </Button>
               </div>
             </div>
           )}
-          </nav>
-
         </Container>
       </div>
     </header>
