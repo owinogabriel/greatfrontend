@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "../shared/Button";
 import { Container } from "../shared/Container";
 import { NavItem } from "../shared/NavItem";
@@ -12,6 +13,7 @@ export const navItems = [
 ];
 
 export const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <header className="absolute inset-x-0 z-50">
       {/* Full-width background wrapper */}
@@ -46,7 +48,53 @@ export const Navbar = () => {
                 </Button>
               </div>
             </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setMenuOpen((prev) => !prev)}
+              className="text-gray-900 focus:outline-none"
+              aria-label="Toggle mobile menu"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d={
+                    menuOpen
+                      ? "M6 18L18 6M6 6l12 12"
+                      : "M4 6h16M4 12h16M4 18h16"
+                  }
+                />
+              </svg>
+            </button>
+          </div>
+          {/* Mobile Menu Dropdown */}
+          {menuOpen && (
+            <div className="fixed justify-center inset-x-0 top-16 bg-gray-100 rounded-md bg-opacity-95 px-4 pt-4 pb-6 z-50 md:hidden">
+              <ul className="text-gray-900 space-y-3 text-lg font-medium">
+                {navItems.map((item, index) => (
+                  <NavItem href={item.href} text={item.text} key={index} />
+                ))}
+              </ul>
+                <div className="flex flex-col gap-6 justify-end">
+                <Button className="w-36 transform transition-transform text-gray-700 bg-white">
+                  Learn more
+                </Button>
+                <Button className="w-32 transform transition-transform text-cyan-50 bg-blue-700">
+                  See Pricing
+                </Button>
+              </div>
+            </div>
+          )}
           </nav>
+
         </Container>
       </div>
     </header>
