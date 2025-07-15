@@ -61,26 +61,28 @@ const Invoice = () => {
               </thead>
               <tbody>
                 {invoices.map((invoice) => (
-                  <tr
-                    key={invoice.id}
-                    className="border-b border-gray-300"
-                  >
+                  <tr key={invoice.id} className="border-b border-gray-300">
                     <td className="px-4 py-2 whitespace-nowrap">
                       {new Date(invoice.created_at).toLocaleDateString()}
                     </td>
                     <td className="px-4 py-2">
                       <span
                         className={`inline-block px-2 py-1 text-xs font-medium rounded whitespace-nowrap
-                ${invoice.status.toLowerCase() === "paid"
-                            ? "bg-green-200 text-green-700"
-                            : "bg-gray-200 text-gray-600"
-                          }`}
+                ${
+                  invoice.status.toLowerCase() === "paid"
+                    ? "bg-green-200 text-green-700"
+                    : "bg-gray-200 text-gray-600"
+                }`}
                       >
                         {invoice.status}
                       </span>
                     </td>
-                    <td className="px-4 py-2 whitespace-nowrap">${invoice.amount.toFixed(2)}</td>
-                    <td className="px-4 py-2 whitespace-nowrap">{invoice.plan}</td>
+                    <td className="px-4 py-2 whitespace-nowrap">
+                      ${invoice.amount.toFixed(2)}
+                    </td>
+                    <td className="px-4 py-2 whitespace-nowrap">
+                      {invoice.plan}
+                    </td>
                     <td className="px-4 py-2">
                       <a
                         href={invoice.invoice_url}
@@ -96,10 +98,10 @@ const Invoice = () => {
               </tbody>
             </table>
           </div>
-            )}
-          </div>
+        )}
+      </div>
     </div>
-      );
+  );
 };
 
-      export default Invoice;
+export default Invoice;
