@@ -19,7 +19,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   try {
-    // Resolve absolute path to the invouse.json file
+    // Resolve absolute path to the invoice.json file
     const filePath = path.join(process.cwd(), 'data', 'invoice.json');
 
     // Read the file contents (synchronously in this case)
@@ -31,7 +31,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     // Respond with a 200 OK and the invoice data
     res.status(200).json(invoices);
   } catch (error) {
-    // Handle file read or JSON parse errors
+    // Handling file read or JSON parse errors
     console.error("Failed to read or parse invouse.json:", error);
     res.status(500).json({ message: 'Internal Server Error' });
   }
