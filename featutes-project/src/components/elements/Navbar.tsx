@@ -82,13 +82,13 @@ export const Navbar = () => {
 
       {/* Mobile Menu Dropdown - Outside the gray background */}
       {menuOpen && (
-        <div className="lg:hidden bg-amber-100 mt-3 bg-opacity-95 rounded-md mx-4 mb-4 p-4 shadow-lg">
+        <div className="lg:hidden bg-[#828282] mt-3 bg-opacity-95 rounded-md mx-4 mb-4 p-4 shadow-lg">
           <ul className="text-gray-900 space-y-3 text-lg font-medium mb-4">
             {navItems.map((item, index) => (
               <li key={index}>
                 <a
                   href={item.href}
-                  className="block py-1 px-4 rounded font-medium text-gray-400 hover:text-amber-100 transition-colors"
+                  className="block py-1 px-4 rounded font-medium text-gray-300 hover:text-amber-100 transition-colors"
                   onClick={() => setMenuOpen(false)}
                 >
                   {item.text}
