@@ -1,7 +1,4 @@
-interface NavItemProps {
-  href: string;
-  text: string;
-}
+import type { NavItemProps } from "../../interface";
 
 export const NavItem = ({ href, text }: NavItemProps) => {
   return (

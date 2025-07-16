@@ -1,14 +1,4 @@
-
-interface TitleProps{
-  children:React.ReactNode;
-  className?:string;
-}
-
-
-interface SubTitleProps{
-  children:React.ReactNode;
-  className?:string;
-}
+import type { SubTitleProps, TitleProps } from "../../interface"
 
 export  const Title = ({children, className=""}:TitleProps) => {
 return(

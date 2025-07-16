@@ -1,12 +1,8 @@
 import { useEffect } from "react";
 import { Navbar } from "./elements/Navbar";
 import { Footer } from "./elements/Footer";
+import type { LayoutProps } from "../interface";
 
-// Defining Layout
-interface LayoutProps {
-  title: string;
-  children: React.ReactNode;
-}
 
 export const Layout = ({ title, children }: LayoutProps) => {
   //useEffect rendered for web title display when onmount

@@ -1,7 +1,4 @@
-interface ParagraphProps {
-  children: React.ReactNode;
-  className?: string;
-}
+import type { ParagraphProps } from "../../interface";
 
 export const Paragraph = ({ children, className = "" }: ParagraphProps) => {
   return (  
