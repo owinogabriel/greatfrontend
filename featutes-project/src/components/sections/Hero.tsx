@@ -32,7 +32,7 @@ const Hero = () => {
                       className="text-[#8185F3] text-xm"
                     />
                   </div>
-                  <span className="">{feature.text}</span>
+                  <span className="font-medium text-lg text-[#828282]">{feature.text}</span>
                 </li>
               ))}
             </ul>
