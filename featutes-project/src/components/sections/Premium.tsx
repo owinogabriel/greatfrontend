@@ -45,10 +45,10 @@ const abstract: {
 const AbstractGrid = ({ title, description }: AbstractProps) => {
   return (
     <div className="text-center pt-4 flex flex-col items-center ">
-      <h1 className="text-lg mt-2.5 font-medium md:text-2xl">{title}</h1>
-     <Paragraph>
-        {description}
-      </Paragraph>
+      <SubTitle className="text-lg mt-2.5 font-medium md:text-[24px]">
+        {title}
+      </SubTitle>
+      <Paragraph>{description}</Paragraph>
     </div>
   );
 };
