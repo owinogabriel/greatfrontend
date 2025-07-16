@@ -1,4 +1,5 @@
 // Import shared components
+import type { AbstractProps } from "../../interface";
 import { Container } from "../shared/Container";
 import { Paragraph } from "../shared/Paragraph";
 import { SubTitle, Title } from "../shared/Title";
@@ -24,8 +25,9 @@ const abstract: {
       "The only limitation with these abstract images is that you are not able to sell them in any form, whether digital or hard copy(such as painting or prints on papy).",
   },
   {
-    text:"Cancel Anytime",
-    description:"Subscribe at your own pace, and cancel when you feel it's enough."
+    text: "Cancel Anytime",
+    description:
+      "Subscribe at your own pace, and cancel when you feel it's enough.",
   },
   {
     text: "Empowering For Team",
@@ -39,20 +41,14 @@ const abstract: {
   },
 ];
 
-// defining props for AbstractGrid component
-interface AbstractProps {
-  title: string;
-  description: string;
-}
-
 // Individual grid item component for displaying feature cards
 const AbstractGrid = ({ title, description }: AbstractProps) => {
   return (
     <div className="text-center pt-4 flex flex-col items-center ">
-      {/* Feature title */}
       <h1 className="text-lg mt-2.5 font-medium md:text-2xl">{title}</h1>
-      {/* Feature description with text styling and character width limit */}
-      <p className="text-xm md:text-lg font-medium text-[#828282] w-full md:max-w-2xl mt-2">{description}</p>
+      <p className="text-xm md:text-lg font-medium text-[#828282] w-full md:max-w-2xl mt-2">
+        {description}
+      </p>
     </div>
   );
 };
@@ -68,7 +64,7 @@ export const Premium = () => {
             In a world where storytelling constantly evolves, we lead with
             groundbreaking images designed for your presentattion excellence.
           </Paragraph>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-3 mt-4 md:gap-[4rem] w-full max-w-6xl">
             {abstract.map((abstracts, index) => (
               <AbstractGrid
