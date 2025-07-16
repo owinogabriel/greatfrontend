@@ -32,7 +32,22 @@ const abstract: {
       "Use as many as you want, from Dribble presentation to PowerPoint presantations.",
   },
 ];
-const Premium = () => {
+
+interface AbstractProps {
+  title: string;
+  description: string;
+}
+
+const AbstractGrid = ({ title, description }: AbstractProps) => {
+  return (
+    <div className="w-full max-w-2xl grid grid-cols-1 mt-7 text-justify pt-5">
+      <SubTitle>{title}</SubTitle>
+      <Paragraph className="text-xm max-w-[20cv] mt-4">{description}</Paragraph>
+    </div>
+  );
+};
+
+export const Premium = () => {
   return (
     <div>
       <Container>
@@ -43,10 +58,17 @@ const Premium = () => {
             In a world where storytelling constantly evolves, we lead with
             groundbreaking images designed for your presentattion excellence.
           </Paragraph>
+          <div>
+            {abstract.map((abstracts, index) => (
+              <AbstractGrid
+                key={index}
+                title={abstracts.text}
+                description={abstracts.description}
+              />
+            ))}
+          </div>
         </div>
       </Container>
     </div>
   );
 };
-
-export default Premium;
