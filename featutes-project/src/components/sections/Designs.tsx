@@ -49,11 +49,11 @@ const Designs = () => {
               <img
                 src={design}
                 alt="Design abstract"
-                className="w-full h-40 md:h-[30%] object-cover"
+                className="w-full h-40 md:h-[45ch] md:p-6 object-cover"
               />
             </div>
           </div>
-          <div className="flex flex-col items-center mt-6 gap-2">
+          <div className="flex flex-col items-center mt-4 gap-2">
             <Title>Best-in-class support</Title>
             <SubTitle>Convince and licensing that empowers</SubTitle>
             <Paragraph>In a world where storytelling constantly evolves, don't let licensing and poor support hold you down.</Paragraph>
