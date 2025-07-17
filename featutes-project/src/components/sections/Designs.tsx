@@ -45,13 +45,18 @@ const Designs = () => {
                 </div>
               ))}
             </div>
-            <div className="flex-2 flex items-start justify-center pt-">
+            <div className="flex-2 flex items-start ">
               <img
                 src={design}
                 alt="Design abstract"
                 className="w-full h-40 md:h-[30%] object-cover"
               />
             </div>
+          </div>
+          <div className="flex flex-col items-center mt-6 gap-2">
+            <Title>Best-in-class support</Title>
+            <SubTitle>Convince and licensing that empowers</SubTitle>
+            <Paragraph>In a world where storytelling constantly evolves, don't let licensing and poor support hold you down.</Paragraph>
           </div>
         </div>
       </Container>
