@@ -21,6 +21,24 @@ const features = [
   },
 ];
 
+const contentItems = [
+  {
+    title: "Faster download",
+    description:
+      "Our robust servers are primed to deliver the highest resolution images swiftly, ensuring a smooth download experience.",
+  },
+  {
+    title: "Convenience for teams",
+    description:
+      "Your single account can accommodate multiple users simultaneously downloading without any disruptions, streamlining teamwork and productivity.",
+  },
+  {
+    title: "Royalty-free licensing",
+    description:
+      "Our straightforward, royalty-free licensing means your chosen images are yours to innovate with, without the hassle of negotiating usage rights for every new project.",
+  },
+];
+
 const Designs = () => {
   return (
     <div>
@@ -61,22 +79,16 @@ const Designs = () => {
               In a world where storytelling constantly evolves, don't let
               licensing and poor support hold you down.
             </Paragraph>
+            
             <GalleryItem imageSrc="/assets/images/class.jpg">
-              <ContentContainer
-                reversed
-                title="Faster download"
-                description="Our robust servers are primed to deliver the highest resolution images swiftyly, ensuring a smooth download ecperience."
-              />
-              <ContentContainer
-                reversed
-                title="Convenience for teams"
-                description="Your single account can accomodate multiple users simultaneously downloading without any disruptions, streamlining teamwork and productivity."
-              />
-              <ContentContainer
-                reversed
-                title="Royalty-free licensing"
-                description="Our straightforward, royalty-free licensing means your chosen images are yours to innovate with, without the hassle of negotiating usage rights for every new project."
-              />
+              {contentItems.map((item, index) => (
+                <ContentContainer
+                  key={index}
+                  reversed
+                  title={item.title}
+                  description={item.description}
+                />
+              ))}
             </GalleryItem>
           </div>
         </div>
