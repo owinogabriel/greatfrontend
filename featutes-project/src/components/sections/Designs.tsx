@@ -1,4 +1,5 @@
 import { Container } from "../shared/Container";
+import { ContentContainer, GalleryItem } from "../shared/GalleryItem";
 import { Paragraph } from "../shared/Paragraph";
 import { SubTitle, Title } from "../shared/Title";
 import design from "/assets/images/design.jpg";
@@ -56,7 +57,27 @@ const Designs = () => {
           <div className="flex flex-col items-center mt-4 gap-2">
             <Title>Best-in-class support</Title>
             <SubTitle>Convince and licensing that empowers</SubTitle>
-            <Paragraph>In a world where storytelling constantly evolves, don't let licensing and poor support hold you down.</Paragraph>
+            <Paragraph>
+              In a world where storytelling constantly evolves, don't let
+              licensing and poor support hold you down.
+            </Paragraph>
+            <GalleryItem imageSrc="/assets/images/class.jpg">
+              <ContentContainer
+                reversed
+                title="Faster download"
+                description="Our robust servers are primed to deliver the highest resolution images swiftyly, ensuring a smooth download ecperience."
+              />
+              <ContentContainer
+                reversed
+                title="Convenience for teams"
+                description="Your single account can accomodate multiple users simultaneously downloading without any disruptions, streamlining teamwork and productivity."
+              />
+              <ContentContainer
+                reversed
+                title="Royalty-free licensing"
+                description="Our straightforward, royalty-free licensing means your chosen images are yours to innovate with, without the hassle of negotiating usage rights for every new project."
+              />
+            </GalleryItem>
           </div>
         </div>
       </Container>
