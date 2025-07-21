@@ -1,3 +1,4 @@
+import { Button } from "../shared/Button";
 import { Container } from "../shared/Container";
 import { Paragraph } from "../shared/Paragraph";
 import SharedCard from "../shared/SharedCard";
@@ -136,9 +137,9 @@ const Testimonials = () => {
             Choose any question you need
           </Paragraph>
           {faqs.map((faq, index) => (
-            <div key={index}>
+            <div key={index} className="justify-start">
               {/* The FAQ question */}
-              <p className="text-lg font-semibold text-center md:text-left mt-2">
+              <p className="text-lg font-semibold text-start md:text-left mt-2">
                 {faq.question}
               </p>
 
@@ -155,6 +156,22 @@ const Testimonials = () => {
               )}
             </div>
           ))}
+          
+          <div className="bg-[#FFFFFF] mt-6 rounded-lg shadow-md shadow-gray-500 p-6 max-2xl gap-4">
+            <SubTitle className="text-xl text-start">
+              Can't find the answer you're looking for?
+            </SubTitle>
+            <Paragraph className="text-start  max-w-[30ch] md:max-w-[50ch]">
+              Reach out to our{" "}
+              <span className="text-[#554CCD] font-light">
+                Customer support
+              </span>{" "}
+              team.
+            </Paragraph>
+            <Button className="w-full mt-4 bg-[#4e45cf] text-[#FFFFFF] md:hidden">
+              Get in touch
+            </Button>
+          </div>
         </div>
       </Container>
     </div>
