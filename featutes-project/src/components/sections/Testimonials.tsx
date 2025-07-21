@@ -136,6 +136,7 @@ const Testimonials = () => {
           <Paragraph className="font-semibold">
             Choose any question you need
           </Paragraph>
+
           {faqs.map((faq, index) => (
             <div key={index} className="justify-start">
               {/* The FAQ question */}
@@ -161,15 +162,17 @@ const Testimonials = () => {
             <SubTitle className="text-xl text-start">
               Can't find the answer you're looking for?
             </SubTitle>
+
             <Paragraph className="text-start  max-w-[30ch] md:max-w-[50ch]">
               Reach out to our{" "}
               <span className="text-[#554CCD]">Customer support</span> team.
             </Paragraph>
+
             <Button className="w-full mt-4 bg-[#4e45cf] text-[#FFFFFF] md:hidden">
               Get in touch
             </Button>
           </div>
-          
+
         </div>
       </Container>
     </div>
