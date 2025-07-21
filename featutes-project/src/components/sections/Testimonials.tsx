@@ -130,6 +130,7 @@ const Testimonials = () => {
             />
           ))}
         </div>
+
         {/* FAQ */}
         <div className="flex flex-col items-center mt-6 gap-4">
           <SubTitle>Frequently asked questions</SubTitle>
