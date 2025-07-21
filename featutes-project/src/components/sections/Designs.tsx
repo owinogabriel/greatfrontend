@@ -79,7 +79,7 @@ const Designs = () => {
               In a world where storytelling constantly evolves, don't let
               licensing and poor support hold you down.
             </Paragraph>
-            
+
             <GalleryItem imageSrc="/assets/images/class.jpg">
               {contentItems.map((item, index) => (
                 <ContentContainer
