@@ -44,6 +44,7 @@ const Invoice = () => {
         </p>
 
         {loading ? (
+        // Show this if loading is true
           <p className="mt-4">Loading invoices...</p>
         ) : invoices.length === 0 ? (
           <p className="mt-4">No invoices found</p>
