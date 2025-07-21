@@ -137,6 +137,7 @@ const Testimonials = () => {
             Choose any question you need
           </Paragraph>
 
+          {/* mapping through the faqs */}
           {faqs.map((faq, index) => (
             <div key={index} className="justify-start">
               {/* The FAQ question */}
@@ -172,7 +173,6 @@ const Testimonials = () => {
               Get in touch
             </Button>
           </div>
-
         </div>
       </Container>
     </div>
