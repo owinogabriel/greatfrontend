@@ -73,28 +73,28 @@ const testimonialData = [
 // frequent asked questions (faqs)
 const faqs = [
   {
-    question:"What types of images are available on your platform?",
-    answer:"Our platform offers a diverse range of abstract images to suit various preference and needs. From vibrant geometric patterns to soothing landscapes, we strive to provide a wide selection to cater to different tastes."
+    question: "What types of images are available on your platform?",
+    answer: "Our platform offers a diverse range of abstract images to suit various preference and needs. From vibrant geometric patterns to soothing landscapes, we strive to provide a wide selection to cater to different tastes."
   },
   {
-    question:"How can I access and download images from your platform?",
-    answer:"Accessing and downloading images from our platform is simple. Upon signing up and logging in, users can browse through our curated collection and download their chosen images directly to their devices with just a few clicks."
+    question: "How can I access and download images from your platform?",
+    answer: "Accessing and downloading images from our platform is simple. Upon signing up and logging in, users can browse through our curated collection and download their chosen images directly to their devices with just a few clicks."
   },
   {
-    question:"Do you offer free images, or is there a subscription required?",
-    answer:"We provide both free and premium images on our platform, Users can explore a selection of free images without any subscription. For accessto our entire library and additional features, we offer subscription plans tailored to different user needs."
+    question: "Do you offer free images, or is there a subscription required?",
+    answer: "We provide both free and premium images on our platform, Users can explore a selection of free images without any subscription. For accessto our entire library and additional features, we offer subscription plans tailored to different user needs."
   },
   {
-    question:"What payment methods do you accept for subscription?",
-    answer:"We accept a variety of payment methods, including credit/debit cards and online payment gateways, to make the subscription process convenient for our users."
+    question: "What payment methods do you accept for subscription?",
+    answer: "We accept a variety of payment methods, including credit/debit cards and online payment gateways, to make the subscription process convenient for our users."
   },
   {
-    question:"Can I cancel or modify my subscription at anytime?",
-    answers:"Yes, absolutely, You have the flexibility to cancel or modify your subscription at any time through your account settings. Changes will take effect immediately, ensuring you have full control over your subscription preferences."
+    question: "Can I cancel or modify my subscription at anytime?",
+    answer: "Yes, absolutely, You have the flexibility to cancel or modify your subscription at any time through your account settings. Changes will take effect immediately, ensuring you have full control over your subscription preferences."
   },
   {
-    question:"How frequently do you update your image collection?",
-    answers:"We regulerly update our image collection with frsh and captivating content to keep our users inspired and engaged. New images are added consistently to ensure there's always something new to discover on our platform."
+    question: "How frequently do you update your image collection?",
+    answer: "We regulerly update our image collection with frsh and captivating content to keep our users inspired and engaged. New images are added consistently to ensure there's always something new to discover on our platform."
   },
 ]
 
@@ -126,7 +126,27 @@ const Testimonials = () => {
         {/* FAQ */}
         <div className="flex flex-col items-center mt-6 gap-4">
           <SubTitle>Frequently asked questions</SubTitle>
-          <Paragraph>Choose any question you need</Paragraph>
+          <Paragraph className="font-semibold">Choose any question you need</Paragraph>
+          {faqs.map((faq, index) => (
+            <div key={index}>
+              {/* Insert a horizontal line between FAQ items, but skip before the first */}
+              {index !== 6 && (
+                <hr className="mt-6 w-full border-t border-gray-600" />
+              )}
+
+              {/* The FAQ question */}
+              <p className="text-lg font-semibold text-center md:text-left mt-2">
+                {faq.question}
+              </p>
+
+              {/* The FAQ answer */}
+              {faq.answer && (
+                <span className="text-gray-500 text-xs  md:text-lg text-start md:text-left block mt-4">
+                  {faq.answer}
+                </span>
+              )}
+            </div>
+          ))}
         </div>
       </Container>
     </div>
