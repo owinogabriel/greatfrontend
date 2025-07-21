@@ -156,17 +156,14 @@ const Testimonials = () => {
               )}
             </div>
           ))}
-          
+
           <div className="bg-[#FFFFFF] mt-6 rounded-lg shadow-md shadow-gray-500 p-6 max-2xl gap-4">
             <SubTitle className="text-xl text-start">
               Can't find the answer you're looking for?
             </SubTitle>
             <Paragraph className="text-start  max-w-[30ch] md:max-w-[50ch]">
               Reach out to our{" "}
-              <span className="text-[#554CCD] font-light">
-                Customer support
-              </span>{" "}
-              team.
+              <span className="text-[#554CCD]">Customer support</span> team.
             </Paragraph>
             <Button className="w-full mt-4 bg-[#4e45cf] text-[#FFFFFF] md:hidden">
               Get in touch
