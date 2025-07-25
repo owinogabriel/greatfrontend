@@ -14,7 +14,9 @@ const Contact = () => {
                 We're committed to delivering the supports you require to make
                 your experience as smooth as possible.
               </Paragraph>
-              <Paragraph className="max-w-[20ch]">123 Maples Street, Springfield, IL, USA</Paragraph>
+              <Paragraph className="max-w-[20ch]">
+                123 Maples Street, Springfield, IL, USA
+              </Paragraph>
               <Paragraph>+1 (650) 555-0198</Paragraph>
               <Paragraph>hello@abstractly.com</Paragraph>
             </div>
