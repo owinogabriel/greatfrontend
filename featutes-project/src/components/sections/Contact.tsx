@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <div>
       <Container>
-        <div>
+        <div className="flex flex-col md:flex-row">
           <div className="flex flex-col items-center">
             <div className="flex flex-col items-start gap-6">
               <SubTitle>Talk to our team</SubTitle>
@@ -33,7 +33,8 @@ const Contact = () => {
               className="bg-[#ffffff] space-y-6 mt-6 p-8 rounded shadow-md shadow-gray-500 w-full "
               noValidate
             >
-              <div>
+              <div className="flex flex-col md:flex-row gap-6">
+                   <div>
                 <label htmlFor="text">Name</label>
                 <input
                   type="name"
@@ -50,8 +51,10 @@ const Contact = () => {
                   className="w-full p-3 border border-gray-400 rounded bg-[#f1f4fa] text-gray-950 placeholder:text-gray-500"
                 />
               </div>
+              </div>
+           
               <div>
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">Message</label>
                 <textarea
                   rows={5}
                   placeholder="Your Email"
