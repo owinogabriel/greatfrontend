@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+input:focus{
+  outline: none;
+}
+
+input, label, textarea{
+  gap:5px;
+}
+
+label{
+  font-weight: bold;
+}
