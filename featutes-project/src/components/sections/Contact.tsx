@@ -7,18 +7,26 @@ const Contact = () => {
     <div>
       <Container>
         <div>
-          <div className="flex flex-col  items-center ">
+          <div className="flex flex-col items-center">
             <div className="flex flex-col items-start gap-6">
-              <SubTitle>Talk to out team</SubTitle>
+              <SubTitle>Talk to our team</SubTitle>
+
               <Paragraph className="text-start text-[20px] max-w-[30ch] md:max-w-[50ch]">
                 We're committed to delivering the supports you require to make
                 your experience as smooth as possible.
               </Paragraph>
-              <Paragraph className="max-w-[20ch]">
-                123 Maples Street, Springfield, IL, USA
-              </Paragraph>
-              <Paragraph>+1 (650) 555-0198</Paragraph>
-              <Paragraph>hello@abstractly.com</Paragraph>
+
+              <div className="flex flex-col font-medium items-start gap-2">
+                <Paragraph className="text-start  max-w-[20ch]">
+                  123 Maples Street, Springfield, IL, USA
+                </Paragraph>
+                <Paragraph className="text-start ">
+                  +1 (650) 555-0198
+                </Paragraph>
+                <Paragraph className="text-start">
+                  hello@abstractly.com
+                </Paragraph>
+              </div>
             </div>
           </div>
         </div>
