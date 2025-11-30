@@ -7,9 +7,9 @@ Welcome to my personal collection of frontend challenges from [GreatFrontEnd](ht
 As a passionate Frontend Developer, I'm constantly learning and pushing myself to build better, more accessible, and maintainable interfaces. GreatFrontEnd challenges offer a structured, hands-on way to sharpen my skills and gain confidence in my frontend workflow.
 
 This repository is a reflection of:
-- 📈 My learning journey
-- 💻 My commitment to clean, modern UI development
-- ⚙️ My growth in JavaScript/TypeScript, React,Nextjs and CSS frameworks
+- 📈 My learning journey.
+- 💻 My commitment to clean, modern UI development.
+- ⚙️ My growth in JavaScript/TypeScript, React,Nextjs and CSS frameworks.
 
 ## 🧱 Tech Stack
 
