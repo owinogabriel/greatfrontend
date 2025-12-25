@@ -2,7 +2,7 @@
 
 Welcome to my personal collection of frontend challenges from [GreatFrontEnd](https://www.greatfrontend.com/). This repo is dedicated to improving my UI/UX, accessibility, and frontend coding skills through practical, real-world projects.
 
-## 💡 Motivation
+## 💡 Motivation.
 
 As a passionate Frontend Developer, I'm constantly learning and pushing myself to build better, more accessible, and maintainable interfaces. GreatFrontEnd challenges offer a structured, hands-on way to sharpen my skills and gain confidence in my frontend workflow.
 
